@@ -41,6 +41,11 @@ def count_down(count):
         window.after(1000, count_down, count-1)
     else:
         start_timer()
+        marks=""
+        work_sessions=int(reps/2)
+        for _ in range (work_sessions):
+            marks+="✓"
+        check_mark.config(text=marks)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -55,7 +60,7 @@ start_button.grid(column=0, row=2)
 reset_button = Button(text="Reset")
 reset_button.grid(column=2, row=2)
 
-check_mark = Label(text="✓", fg=GREEN, font=(FONT_NAME, 15, "bold"), bg=YELLOW)
+check_mark = Label( fg=GREEN, font=(FONT_NAME, 15, "bold"), bg=YELLOW)
 check_mark.grid(row=3, column=1)
 
 canvas= Canvas(width= 200, height=224, bg=YELLOW, highlightthickness=0)
